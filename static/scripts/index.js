@@ -1,26 +1,41 @@
-const form = document.getElementById("translate-form");
+const form = document.getElementById("translateForm");
+const resultDiv = document.getElementById("result");
+const errorDiv = document.getElementById("error");
 
 form.addEventListener("submit", async (event) => {
-    event.preventDefault(); // Prevent the default form submission
-    const textInput = document.getElementById("text-input").value;
-    const resultElement = document.getElementById("result");
+    event.preventDefault();
+
+    const text = document.getElementById("textToTranslate").value.trim();
+    resultDiv.classList.add("d-none");
+    errorDiv.classList.add("d-none");
+
+    if (!text) {
+        errorDiv.textContent = "Error: Input cannot be empty.";
+        errorDiv.classList.remove("d-none");
+        return;
+    }
+
+    resultDiv.textContent = "Translating...";
+    resultDiv.classList.remove("d-none");
 
     try {
         const response = await fetch("/translate", {
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams({ text: textInput }),
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text }),
         });
-
         const data = await response.json();
 
         if (response.ok) {
-            resultElement.textContent = `Translation: ${data.translated_text}`;
+            resultDiv.textContent = `Translation: ${data.translated_text}`;
+            resultDiv.classList.remove("alert-danger");
+            resultDiv.classList.add("alert-success");
         } else {
-            resultElement.textContent = `Error: ${data.error}`;
+            errorDiv.textContent = `Error: ${data.error}`;
+            errorDiv.classList.remove("d-none");
         }
     } catch (error) {
-        resultElement.textContent = `Error: Unable to connect to the server.`;
-        console.error(error);
+        errorDiv.textContent = "Error: Unable to connect to the server.";
+        errorDiv.classList.remove("d-none");
     }
 });
