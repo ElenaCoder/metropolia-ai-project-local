@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 from controllers.translation_controller import translate_text
 from middlewares.error_handler import handle_errors
 
