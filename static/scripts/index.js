@@ -31,7 +31,15 @@ form.addEventListener("submit", async (event) => {
             resultDiv.classList.remove("alert-danger");
             resultDiv.classList.add("alert-success");
         } else {
-            errorDiv.textContent = `Error: ${data.error}`;
+
+            let userFriendlyMessage;
+            if (data.error && data.error.includes("is currently loading")) {
+                userFriendlyMessage = "The translation service is initializing. Please try again shortly.";
+            } else {
+                userFriendlyMessage = "An error occurred while processing your request. Please try again later.";
+            }
+
+            errorDiv.textContent = `Error: ${userFriendlyMessage}`;
             errorDiv.classList.remove("d-none");
         }
     } catch (error) {
