@@ -1,11 +1,21 @@
-from transformers import pipeline
+import os
+from dotenv import load_dotenv
+import requests
 
-translator = None  # Lazy-loaded global variable
+# Load environment variables from .env
+load_dotenv()
 
 def translate_to_finnish(text):
-    global translator
-    if translator is None:
-        print("Loading translation model...")
-        translator = pipeline("translation_en_to_fi", model="Helsinki-NLP/opus-mt-en-fi")
-    result = translator(text, max_length=500)
-    return result[0]['translation_text']
+    url = "https://api-inference.huggingface.co/models/Helsinki-NLP/opus-mt-en-fi"
+    token = os.getenv("HUGGING_FACE_API_TOKEN")
+    if not token:
+        raise ValueError("HUGGING_FACE_API_TOKEN is not set in environment variables")
+
+    headers = {"Authorization": f"Bearer {token}"}
+    payload = {"inputs": text}
+
+    response = requests.post(url, headers=headers, json=payload)
+    if response.status_code == 200:
+        return response.json()[0]["translation_text"]
+    else:
+        raise RuntimeError(f"Translation API failed: {response.text}")
