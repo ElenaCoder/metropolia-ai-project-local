@@ -89,8 +89,8 @@ This solution utilizes the Hugging Face Inference API, offloading the translatio
 <summary>1. Clone the repository:</summary>
 
 ```
-git clone https://github.com/ElenaCoder/metropolia-ai-project.git
-cd metropolia-ai-project
+git clone https://github.com/ElenaCoder/metropolia-ai-project-local.git
+cd metropolia-ai-project-local
 ```
 </details>
 
@@ -141,5 +141,5 @@ Explore a sneak peek of the **English to Finnish Translator - Solution 1** proje
 
 ## Contact
 For questions or feedback, feel free to reach out:
- - [GitHub: ElenaCoder](https://github.com/ElenaCoder/metropolia-ai-project)
+ - [GitHub: ElenaCoder](https://github.com/ElenaCoder)
  - [LinkedIn: Elena Golovanova](https://www.linkedin.com/in/elena-golovanova/)
