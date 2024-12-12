@@ -42,6 +42,8 @@ metropolia-ai-project/
 │       └── index.js       # JavaScript for dynamic form submission
 ├── templates/             # HTML templates for the frontend
 │   └── index.html
+├── assets/                # solution 1 navigation demo
+│   └── solution1-navigation-demo.gif
 ├── venv/                  # Virtual environment for Python dependencies
 ├── .gitignore             # Git ignored files and directories
 ├── README.md              # Project documentation (this file)
@@ -53,7 +55,7 @@ metropolia-ai-project/
 I have done two different implementations (Solution 1 and Solution 2) for handling English-to-Finnish translations.
 <details>
 
-<summary>### Solution 1 (current): Local Model Loading (For Local Development Only)</summary>
+<summary>**Solution 1 (current):** Local Model Loading (For Local Development Only)</summary>
 This solution uses the Helsinki-NLP/opus-mt-en-fi translation model from Hugging Face by loading it locally via the transformers library.
 
 **Advantages:**
@@ -64,7 +66,10 @@ This solution uses the Helsinki-NLP/opus-mt-en-fi translation model from Hugging
 - Memory-intensive and cannot be deployed on free-tier platforms like Render.
 - Requires downloading and initializing the entire model on the local machine.
 
-<summary>### Solution 2: Hugging Face Inference API (For Local and Deployment)</summary>
+</details>
+
+<details>
+<summary>**Solution 2:** Hugging Face Inference API (For Local and Deployment)</summary>
 This solution utilizes the Hugging Face Inference API, offloading the translation model to Hugging Face’s servers.
 
 **Advantages:**
