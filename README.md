@@ -5,7 +5,7 @@
 
 ## Overview
 
-This is a simple *English to Finnish Translator* built using **Flask** on the backend and modern **JavaScript** on the frontend. The app allows users to input English text, translates it to Finnish using the **Helsinki-NLP Opus-MT model**, and displays the translated text on the same page without reloading. The solution leverages Flask's routing and middleware capabilities, the Hugging Face Transformers library for translation, and JavaScript's fetch API for dynamic updates.
+This is a simple **English to Finnish Translator** built using **Flask** on the backend and modern **JavaScript** on the frontend. The app allows users to input English text, translates it to Finnish using the **Helsinki-NLP Opus-MT model**, and displays the translated text on the same page without reloading. The solution leverages Flask's routing and middleware capabilities, the Hugging Face Transformers library for translation, and JavaScript's fetch API for dynamic updates.
 
 ## Features
 
@@ -18,10 +18,6 @@ This is a simple *English to Finnish Translator* built using **Flask** on the ba
 - **Backend**: Flask, Python, Hugging Face Inference API
 - **Frontend**: HTML, JavaScript, Bootstrap
 
-## How to Use
-
-1. Enter English text in the text field on the page.
-2. Click the "Translate" button to get the Finnish translation.
 
 ## Project Structure
 
@@ -52,7 +48,7 @@ metropolia-ai-project/
 
 ## Translation Service Implementation
 
-I have done two different implementations (Solution 1 and Solution 2) for handling English-to-Finnish translations.
+I have done two different implementations ([Solution 1](https://github.com/ElenaCoder/metropolia-ai-project-local) and [Solution 2](https://github.com/ElenaCoder/metropolia-ai-project)) for handling English-to-Finnish translations.
 <details>
 
 <summary>Solution 1 (*current): Local Model Loading -- For Local Use</summary>
@@ -132,6 +128,10 @@ Open `http://127.0.0.1:5000` in your browser.
 
 </details>
 
+## How to Use
+
+1. Enter English text in the text field on the page.
+2. Click the "Translate" button to get the Finnish translation.
 
 ## Project preview
 
