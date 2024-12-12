@@ -55,7 +55,7 @@ metropolia-ai-project/
 I have done two different implementations (Solution 1 and Solution 2) for handling English-to-Finnish translations.
 <details>
 
-<summary>**Solution 1 (current):** Local Model Loading (For Local Development Only)</summary>
+<summary>Solution 1 (*current): Local Model Loading -- For Local Use</summary>
 This solution uses the Helsinki-NLP/opus-mt-en-fi translation model from Hugging Face by loading it locally via the transformers library.
 
 **Advantages:**
@@ -69,7 +69,7 @@ This solution uses the Helsinki-NLP/opus-mt-en-fi translation model from Hugging
 </details>
 
 <details>
-<summary>**Solution 2:** Hugging Face Inference API (For Local and Deployment)</summary>
+<summary>Solution 2: Hugging Face Inference API -- For Local and Deployment</summary>
 This solution utilizes the Hugging Face Inference API, offloading the translation model to Hugging Face’s servers.
 
 **Advantages:**
@@ -83,13 +83,19 @@ This solution utilizes the Hugging Face Inference API, offloading the translatio
 </details>
 
 ## How to Run Locally with Solution 1:
+
 <details>
+
 <summary>1. Clone the repository:</summary>
 
 ```
 git clone https://github.com/ElenaCoder/metropolia-ai-project.git
 cd metropolia-ai-project
 ```
+</details>
+
+<details>
+
 <summary>2. Set up a virtual environment (optional):</summary>
 
 ```
@@ -98,16 +104,28 @@ source venv/Scripts/activate  # Windows
 # or
 source venv/bin/activate      # macOS/Linux
 ```
+</details>
+
+<details>
+
 <summary>3. Install the required Python packages:</summary>
 
 ```
 pip install -r requirements.txt
 ```
+</details>
+
+<details>
+
 <summary>4. Run the application:</summary>
 
 ```
 python app.py
 ```
+</details>
+
+<details>
+
 <summary>5. Access the app:</summary>
 
 Open `http://127.0.0.1:5000` in your browser.
