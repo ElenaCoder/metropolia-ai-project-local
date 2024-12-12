@@ -9,9 +9,6 @@ CORS(app)  # Enable CORS for all routes
 # Register middleware
 app.register_error_handler(Exception, handle_errors)
 
-# @app.route("/1")
-# def home1():
-#     return jsonify({"message": "Hello, Flask!"})
 
 # Routes
 @app.route("/")
